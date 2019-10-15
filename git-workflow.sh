@@ -15,9 +15,18 @@ function commit {
 
 function merge {
   git checkout $1
+
   git rebase master
   git checkout master  
+
+# force fast forward
+#  git merge --ff-only $1
+
+# force merge commit
   git merge --no-ff --log --no-edit $1
+
+# fast forward or merge commit
+#  git merge --log $1
 }
 
 
